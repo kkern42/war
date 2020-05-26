@@ -17,7 +17,7 @@ class App extends Component {
 
   createdeck = () => {
     let deck = [];
-    let nums = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 'Jack', 'Queen', 'King', 'Ace'];
+    let nums = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
     let suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
 
     for (let i = 0; i < suits.length; i++) {
@@ -37,13 +37,14 @@ class App extends Component {
       deck.splice(num, 1);
     }
     this.setState({ cards: shuffle });
-    console.log(shuffle.slice(26, 52).length);
     this.setState({ pc: shuffle.slice(0, 26) });
     this.setState({ player: shuffle.slice(26, 52) });
   }
 
   start = () => {
     this.setState({ play: true });
+    console.log(this.state.player);
+    console.log(this.state.pc);
   }
 
   componentDidMount() {
@@ -61,7 +62,7 @@ class App extends Component {
               ]
             }
           </div>
-          <div style={{ marginLeft: "50vw", marginTop: "20vw" }}>
+          <div >
             {
               this.state.play && [
                 <div>
