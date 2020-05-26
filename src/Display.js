@@ -48,10 +48,10 @@ function Display(props) {
         <div>
             <div style={{ marginLeft: "50vw", marginTop: "20vw" }}>
                 {
-                    getCards[0] >= 0 && [
+                    getCards[0] > 0 && [
                         <div>
-                            <div>Your card {props.user[getCards[0]].value} of {props.user[getCards[0]].suit} </div>
-                            <div>Machines card {props.machine[getCards[0]].value} of {props.machine[getCards[0]].suit}</div>
+                            <div>Your card {props.user[getCards[0] - 1].value} of {props.user[getCards[0] - 1].suit} </div>
+                            <div>Machines card {props.machine[getCards[0] - 1].value} of {props.machine[getCards[0] - 1].suit}</div>
                             <div >Your score: {getCards[1]}</div>
                             <div> Machine score: {getCards[2]}</div>
                         </div>
