@@ -24,8 +24,17 @@ function Display(props) {
     const [getCards, setCards] = React.useState([0, 0, 0]);
 
     const increment = () => {
+        // if (getCards[0] == -1) {
+        //     if (props.user[getCards[0] + 1].value >= props.machine[getCards[0] + 1].value) {
+        //         setCards([getCards[0] + 1, getCards[1] + 1, getCards[2]]);
 
-        if (props.user[getCards[0]].value > props.machine[getCards[0]].value) {
+        //     }
+        //     else {
+        //         setCards([getCards[0] + 1, getCards[1], getCards[2] + 1]);
+        //     }
+        // }
+        // else 
+        if (props.user[getCards[0]].value >= props.machine[getCards[0]].value) {
             setCards([getCards[0] + 1, getCards[1] + 1, getCards[2]]);
 
         }
@@ -33,21 +42,24 @@ function Display(props) {
             setCards([getCards[0] + 1, getCards[1], getCards[2] + 1]);
         }
 
+
     }
     return (
         <div>
             <div style={{ marginLeft: "50vw", marginTop: "20vw" }}>
-                <div>Your card {props.user[getCards[0]].value} of {props.user[getCards[0]].suit} </div>
-                <div>Machines card {props.machine[getCards[0]].value} of {props.machine[getCards[0]].suit}</div>
-                {/* <CompareCards user={props.user} machine={props.machine} getScore={getCards} setScore={setCards} /> */}
+                {
+                    getCards[0] >= 0 && [
+                        <div>
+                            <div>Your card {props.user[getCards[0]].value} of {props.user[getCards[0]].suit} </div>
+                            <div>Machines card {props.machine[getCards[0]].value} of {props.machine[getCards[0]].suit}</div>
+                            <div >Your score: {getCards[1]}</div>
+                            <div> Machine score: {getCards[2]}</div>
+                        </div>
+
+                    ]
+                }
             </div>
             <button style={{ marginLeft: "50vw", marginTop: "2vw" }} onClick={increment}>Draw</button>
-            <div style={{ marginLeft: "50vw", marginTop: "2vw" }}>
-                Your score: {getCards[1]}
-            </div>
-            <div style={{ marginLeft: "50vw", marginTop: "2vw" }}>
-                Machine score: {getCards[2]}
-            </div>
 
         </div>
     );

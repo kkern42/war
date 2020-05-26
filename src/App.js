@@ -17,7 +17,7 @@ class App extends Component {
 
   createdeck = () => {
     let deck = [];
-    let nums = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King', 'Ace'];
+    let nums = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
     let suits = ["Spades", "Hearts", "Clubs", "Diamonds"]
 
     for (let i = 0; i < suits.length; i++) {
