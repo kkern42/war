@@ -65,17 +65,22 @@ class App extends Component {
   render() {
     return (
       <body>
-        <div>
-          {/* {this.state.player.map((card) => {
-            return (
-              <div>
-                {card.value} of {card.suit}
-              </div>
-            )
-          })} */}
-          {
-            this.state.play && <div></div>
-          }
+        <div >
+          <div style={{ marginLeft: "50vw", marginTop: "20vw" }}>
+            {
+              !this.state.play && [
+                <button onClick={this.start}>Start</button>
+              ]
+            }
+          </div>
+          <div style={{ marginLeft: "50vw", marginTop: "20vw" }}>
+            {
+              this.state.play && [
+                <button onClick={this.draw}>Draw</button>
+              ]
+            }
+
+          </div>
 
         </div>
       </body>
