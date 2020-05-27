@@ -1,0 +1,15 @@
+#cardParent{
+    margin-right:10px;
+    float:left;
+}
+
+.card{
+    border: 2px solid rgb(82, 82, 231);
+    border-radius: 14px;
+    width:100px;
+    height: 150px;
+    padding:5px;
+    float:left;
+    margin-right: 5px;
+    
+}
